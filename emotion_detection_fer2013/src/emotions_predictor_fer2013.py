@@ -52,7 +52,7 @@ def plot_model_history(model_history):
 
 
 # Define the emotion prediction function for a single image
-def predict_emotion(img_file):
+def predict_emotion_fer(img_file):
     emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
     img = cv2.imread(img_file, cv2.IMREAD_GRAYSCALE)
@@ -76,7 +76,7 @@ def analyze_emotions_in_folder(folder_path):
     for img_file in glob.glob(folder_path + "/*.jpg"):  # Adjust the extension if needed
         img = cv2.imread(img_file, cv2.IMREAD_GRAYSCALE)
         if img is not None:
-            emotion = predict_emotion(img_file)
+            emotion = predict_emotion_fer(img_file)
             predictions.append((os.path.basename(img_file), emotion))
 
     with open('emotion_predictions.csv', 'w', newline='') as file:

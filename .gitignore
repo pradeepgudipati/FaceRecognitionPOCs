@@ -1,6 +1,12 @@
 /Data/
 /emotion_detection_deepface/daon_faces/
 /emotion_detection_deepface/face_extracts/
+/emotion_detection_fer2013/src/data/
 *.html
 *.csv
 /__MACOSX/
+/venv/*
+.idea/*
+*.rar
+*.zip
+

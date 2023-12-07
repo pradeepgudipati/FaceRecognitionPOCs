@@ -5,7 +5,7 @@ import random
 import numpy as np
 from PIL import Image
 from deepface import DeepFace
-from emotion_detection_fer2013.src.emotions_predictor_fer2013 import predict_emotion
+from emotion_detection_fer2013.src.emotions_predictor_fer2013 import predict_emotion_fer
 
 cwd = os.getcwd()
 images_directory = os.path.join(cwd, "images")
@@ -87,7 +87,7 @@ def load_and_analyze_all_faces(images_dir_name, start=0, end=0):
     for image_path in image_paths:
         if count > start:
             analysis = analyze_face(image_path, count)
-            emotion = predict_emotion(image_path)
+            emotion = predict_emotion_fer(image_path)
             if analysis:
                 image_analysis_pairs.append((image_path, analysis, emotion))
 
