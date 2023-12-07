@@ -1,0 +1,6 @@
+/Data/
+/emotion_detection_deepface/daon_faces/
+/emotion_detection_deepface/face_extracts/
+*.html
+*.csv
+/__MACOSX/
