@@ -5,8 +5,7 @@
 *.html
 *.csv
 /__MACOSX/
-/venv/*
-.idea/*
+/venv/
+.idea/
 *.rar
 *.zip
-
