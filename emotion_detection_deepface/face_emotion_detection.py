@@ -69,7 +69,7 @@ def load_and_extract_face(image_path):
         analyze_face(extracted_face_path)
 
 
-def load_and_analyze_all_faces(images_dir_name, start=0, end=0):
+def load_and_analyze_all_faces(images_dir_name, start=1, end=99999):
     print(images_dir_name)
     images_path = os.path.join(cwd, images_dir_name)
     filename = 'image_analysis_' + images_dir_name + ".html"
@@ -79,13 +79,12 @@ def load_and_analyze_all_faces(images_dir_name, start=0, end=0):
 
     image_paths = [os.path.join(images_path, filename) for filename in os.listdir(images_path) if
                    filename.endswith((".jpeg", ".png", ".jpg"))]
-    if start == 0 and end == 0:
-        start = 0
+    if end == 99999:
         end = len(image_paths)
 
     count = 0
     for image_path in image_paths:
-        if count > start:
+        if count <= start:
             analysis = analyze_face(image_path, count)
             emotion = predict_emotion_fer(image_path)
             if analysis:
